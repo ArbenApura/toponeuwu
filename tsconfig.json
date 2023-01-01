@@ -11,7 +11,10 @@
 		"strict": true,
 		"baseUrl": ".",
 		"paths": {
-			"$styles/*": ["src/styles/*"]
+			"$styles/*": ["src/styles/*"],
+			"$components/*": ["src/components/*"],
+			"$utils/*": ["src/utils/*"],
+			"$types/*": ["src/types/*"]
 		}
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
