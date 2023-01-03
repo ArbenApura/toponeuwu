@@ -27,19 +27,16 @@
 	@import '$styles';
 	.wrapper {
 		@include flex-center-start;
-		background-color: var(--bg-color-1);
+		@include box(100%);
+		background-color: var(--bg-color-2);
+		position: fixed;
 		.container {
 			display: flex;
 			width: 100%;
 			max-width: 1536px;
 			min-height: 100vh;
 			.page {
-				@include md-down-screen {
-					height: calc(100vh - 60px);
-					max-height: calc(100vh - 60px);
-				}
 				width: 100%;
-				background-color: var(--bg-color-2);
 				overflow: auto;
 			}
 		}

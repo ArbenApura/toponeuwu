@@ -3,6 +3,7 @@
 	import IconImage from '$assets/icon.png';
 	import NavigationItem from './NavigationItem.svelte';
 	import AccountItem from './AccountItem.svelte';
+	import Filler from './Filler.svelte';
 
 	// STATES
 	const items = [
@@ -12,9 +13,10 @@
 		{ label: 'Forum', icon: 'ti-world', href: '/forum' },
 		{ label: 'About', icon: 'ti-question-circle', href: '/about' }
 	];
+	let sideBarEl: HTMLDivElement;
 </script>
 
-<div class="wrapper">
+<div class="wrapper" bind:this={sideBarEl}>
 	<div class="container">
 		<div class="header">
 			<div class="icon">
@@ -37,6 +39,8 @@
 	</div>
 </div>
 
+<Filler {sideBarEl} />
+
 <style lang="scss">
 	@import '$styles';
 	.wrapper {
@@ -56,6 +60,7 @@
 			max-width: 250px;
 		}
 		width: 100%;
+		background-color: var(--bg-color-1);
 		overflow: hidden;
 		.container {
 			@include md-down-screen {
