@@ -18,12 +18,14 @@
 
 <div class="wrapper" bind:this={sideBarEl}>
 	<div class="container">
-		<div class="header">
-			<div class="icon">
-				<img src={IconImage} alt="Top One Uwu Icon" />
+		<a href="/">
+			<div class="header">
+				<div class="icon">
+					<img src={IconImage} alt="Top One Uwu Icon" />
+				</div>
+				<h3>Top One Uwu</h3>
 			</div>
-			<h3>Top One Uwu</h3>
-		</div>
+		</a>
 		<div class="body">
 			<div class="list">
 				{#each items as item}
@@ -43,6 +45,9 @@
 
 <style lang="scss">
 	@import '$styles';
+	:global(.tooltip) {
+		--tooltip-background-color: var(--bg-color-3);
+	}
 	.wrapper {
 		@include sm-up-screen {
 			@include border-right;
@@ -61,7 +66,6 @@
 		}
 		width: 100%;
 		background-color: var(--bg-color-1);
-		overflow: hidden;
 		.container {
 			@include md-down-screen {
 				flex-direction: row;

@@ -5,14 +5,18 @@
 	import { onMount } from 'svelte';
 	// FUNCTIONS
 	import { initializeThemeStates } from '$stores/themeStates';
+	import { initializeMediaStates, updateMedia } from '$stores/mediaStates/utils';
 	// STYLES
 	import '$styles/index.scss';
 
 	// LIFECYCLES
 	onMount(() => {
 		initializeThemeStates();
+		initializeMediaStates();
 	});
 </script>
+
+<svelte:window on:resize={updateMedia} />
 
 <div class="wrapper">
 	<div class="container">

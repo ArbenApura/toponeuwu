@@ -25,6 +25,10 @@
 <style lang="scss">
 	@import '$styles';
 	.wrapper {
+		@include xl-up-screen {
+			border-top-left-radius: shaping(6);
+			border-bottom-left-radius: shaping(6);
+		}
 		cursor: pointer;
 		&:hover {
 			background-color: var(--bg-color-2);
@@ -38,8 +42,14 @@
 		.container {
 			@include flex-start-center;
 			.avatar {
-				@include box(60px);
 				@include flex-center;
+				@include md-down-screen {
+					width: calc(100vw / 6);
+					height: 60px;
+				}
+				@include sm-up-screen {
+					@include box(60px);
+				}
 				img {
 					@include box(40px);
 					transition: 0.2s;

@@ -9,7 +9,7 @@ import { updateStyleRoot } from './utils';
 const DEFAULT_MODE: ThemeMode = 'dark';
 
 // STATES
-const mode = writable<ThemeMode>(DEFAULT_MODE);
+export const mode = writable<ThemeMode>(DEFAULT_MODE);
 export const themeStates = { mode };
 
 // SUBSCRIPTIONS
