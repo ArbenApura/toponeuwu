@@ -9,7 +9,9 @@ const config = {
 			$styles: path.resolve('./src/styles'),
 			$components: path.resolve('./src/components'),
 			$utils: path.resolve('./src/utils'),
-			$types: path.resolve('./src/types')
+			$stores: path.resolve('./src/stores'),
+			$types: path.resolve('./src/types'),
+			$assets: path.resolve('./src/assets')
 		}
 	}
 };

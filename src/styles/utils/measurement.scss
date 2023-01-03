@@ -1,0 +1,10 @@
+// VARIABLES
+$spacing: 4px;
+$shaping: 4px;
+// FUNCTIONS
+@function spacing($value) {
+	@return $spacing * $value;
+}
+@function shaping($value) {
+	@return $shaping * $value;
+}
