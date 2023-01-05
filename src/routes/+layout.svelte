@@ -3,11 +3,20 @@
 	import SideBar from '$components/SideBar';
 	// IMPORTED LIB-UTILS
 	import { onMount } from 'svelte';
+	import { navigating } from '$app/stores';
+	import NProgress from 'nprogress';
 	// IMPORTED UTILS
 	import { updateMedia } from '$stores/mediaStates/utils';
 	import { initializeStores } from '$stores/index';
 	// IMPORTED STYLES
 	import '$styles/index.scss';
+
+	// REACTIVE STATEMENTS
+	$: {
+		// NPROGRESS
+		if ($navigating) NProgress.start();
+		else NProgress.done();
+	}
 
 	// LIFECYCLES
 	onMount(() => {
@@ -46,6 +55,7 @@
 				}
 				width: 100%;
 				height: 100vh;
+				overflow: auto;
 			}
 		}
 	}
