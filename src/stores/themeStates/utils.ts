@@ -1,12 +1,12 @@
 // IMPORTED TYPES
 import type { ThemeMode } from './types';
-// IMPORTED LIB-FUNCTIONS
+// IMPORTED LIB-UTILS
 import { get } from 'svelte/store';
 import cookie from 'cookiejs';
-// IMPORTED FUNCTIONS
+// IMPORTED UTILS
 import { palette } from '$utils/palette';
 // IMPORTED STATES
-import { isInitialized, mode, themeStates } from './states';
+import { mode, themeStates } from './states';
 
 // UTILS
 export const toggleTheme = () => mode.update((value) => (value == 'light' ? 'dark' : 'light'));
@@ -30,8 +30,6 @@ export const updateStyleRoot = () => {
 			palette.dark.map((value, index) => {
 				setStyleProperty(`--bg-color-${index + 1}`, value);
 			});
-			// setStyleProperty('--text-color', palette.light[1]);
-			// setStyleProperty('--bg-color', palette.dark[0]);
 			setStyleProperty('--border-color', palette.dark[3]);
 			break;
 		default:
@@ -47,5 +45,4 @@ export const updateStyleRoot = () => {
 export const initializeThemeStates = () => {
 	loadStoredData();
 	updateStyleRoot();
-	isInitialized.set(true);
 };

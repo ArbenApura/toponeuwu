@@ -1,18 +1,17 @@
 <script lang="ts">
 	// IMPORTED COMPONENTS
 	import SideBar from '$components/SideBar';
-	// IMPORTED LIB-FUNCTIONS
+	// IMPORTED LIB-UTILS
 	import { onMount } from 'svelte';
-	// IMPORTED FUNCTIONS
-	import { initializeThemeStates } from '$stores/themeStates';
-	import { initializeMediaStates, updateMedia } from '$stores/mediaStates/utils';
+	// IMPORTED UTILS
+	import { updateMedia } from '$stores/mediaStates/utils';
+	import { initializeStores } from '$stores/index';
 	// IMPORTED STYLES
 	import '$styles/index.scss';
 
 	// LIFECYCLES
 	onMount(() => {
-		initializeThemeStates();
-		initializeMediaStates();
+		initializeStores();
 		// REMOVE LOADING STATE
 		const loadingEl = document.querySelector('.loading');
 		if (loadingEl) document.body.removeChild(loadingEl);

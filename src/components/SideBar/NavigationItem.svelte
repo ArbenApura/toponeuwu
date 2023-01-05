@@ -1,8 +1,8 @@
 <script lang="ts">
-	// IMPORTED LIB-FUNCTIONS
+	// IMPORTED LIB-UTILS
 	import { tooltip } from '@svelte-plugins/tooltips';
 	import { page } from '$app/stores';
-	// IMPORTED FUNCTIONS
+	// IMPORTED UTILS
 	import { isMD } from '$stores/mediaStates';
 
 	// PROPS
@@ -42,6 +42,9 @@
 		}
 		&[data-is-active='true'] {
 			background-color: $primary-color;
+			* {
+				color: white;
+			}
 		}
 		.container {
 			@include flex-start-center;
@@ -53,9 +56,6 @@
 				}
 				@include sm-up-screen {
 					@include box(60px);
-				}
-				i {
-					transition: transform 0.2s;
 				}
 			}
 			p {

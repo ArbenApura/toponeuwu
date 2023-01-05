@@ -1,4 +1,4 @@
-// IMPORTED LIB-FUNCTIONS
+// IMPORTED LIB-UTILS
 import { writable } from 'svelte/store';
 
 // STATES

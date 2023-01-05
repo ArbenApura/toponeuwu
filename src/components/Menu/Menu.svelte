@@ -1,64 +1,31 @@
 <script lang="ts">
-	// IMPORTED LIB-FUNCTIONS
+	// IMPORTED LIB-TYPES
+	import type { Placement } from '@popperjs/core';
+	// IMPORTED TYPES
+	import type { MenuItem } from './types';
+	// IMPORTED LIB-UTILS
 	import { createPopper } from '@popperjs/core';
-	// IMPORTED FUNCTIONS
-	import { mode, toggleTheme } from '$stores/themeStates';
 
 	// PROPS
-	export let parentEl: HTMLDivElement, isOpen: boolean, toggleMenu: () => void;
+	export let parentEl: HTMLElement,
+		isOpen: boolean,
+		setIsOpen: (isOpen: boolean) => void,
+		items: MenuItem[],
+		placement: Placement = 'top-start';
 
 	// REFS
 	let childEl: HTMLDivElement;
 
-	// SATES
-	$: items = [
-		{
-			type: 'link',
-			label: 'Profile',
-			icon: 'ti-user-circle',
-			isVisible: true,
-			href: '/account'
-		},
-		{
-			type: 'button',
-			label: `Switch theme (${$mode})`,
-			icon: $mode == 'light' ? 'ti-brightness-2' : 'ti-moon-stars',
-			isVisible: true,
-			handleClick: toggleTheme
-		},
-		{
-			type: 'button',
-			label: 'Sign out',
-			icon: 'ti-key-off',
-			isVisible: true,
-			handleClick: () => {}
-		},
-		{
-			type: 'link',
-			label: 'Sign in',
-			icon: 'ti-key',
-			isVisible: true,
-			href: '/account/sign-in'
-		},
-		{
-			type: 'link',
-			label: 'Sign up',
-			icon: 'ti-user-plus',
-			isVisible: true,
-			href: '/account/sign-up'
-		}
-	];
-
 	// REACTIVE STATEMENTS
 	$: (() => {
 		if (!parentEl || !childEl) return;
-		createPopper(parentEl, childEl, { placement: 'top-start' });
+		createPopper(parentEl, childEl, { placement });
 	})();
 </script>
 
 {#if isOpen}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="backdrop" on:click={toggleMenu} />
+	<div class="backdrop" on:click={() => setIsOpen(false)} />
 {/if}
 
 <div class="container" bind:this={childEl}>
@@ -69,12 +36,16 @@
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div class="item" on:click={item.handleClick}>
 						<p>{item.label}</p>
-						<i class={`ti ${item.icon}`} />
+						{#if item.icon}
+							<i class={`ti ${item.icon}`} />
+						{/if}
 					</div>
 				{:else if item.type == 'link'}
 					<a class="item" href={item.href}>
 						<p>{item.label}</p>
-						<i class={`ti ${item.icon}`} />
+						{#if item.icon}
+							<i class={`ti ${item.icon}`} />
+						{/if}
 					</a>
 				{/if}
 			{/if}
@@ -104,7 +75,6 @@
 			&[data-is-open='false'] {
 				display: none;
 			}
-
 			.item {
 				@include border-bottom;
 				@include flex-start-center;
@@ -118,8 +88,12 @@
 					border-bottom: none;
 				}
 				p {
+					@include mr(2);
 					font-size: 0.9rem;
 					flex-grow: 1;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
 				}
 				.ti {
 					font-size: 25px;

@@ -1,4 +1,4 @@
-// IMPORTED FUNCTIONS
+// IMPORTED UTILS
 import { breakpoints } from '$utils/breakpoints';
 // IMPORTED STATES
 import { mediaStates } from './states';
