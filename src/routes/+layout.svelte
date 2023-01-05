@@ -1,6 +1,6 @@
 <script lang="ts">
 	// IMPORTED COMPONENTS
-	import SideBar from '$components/SideBar';
+	import SideBar from '$layouts/SideBar';
 	// IMPORTED LIB-UTILS
 	import { onMount } from 'svelte';
 	import { navigating } from '$app/stores';

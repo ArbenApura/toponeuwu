@@ -1,13 +1,13 @@
 <script lang="ts">
 	// IMPORTED TYPES
-	import type { MenuItem } from '$components/Menu';
+	import type { MenuItem } from '$modules/Menu';
 	// IMPORTED LIB-UTILS
 	import { page } from '$app/stores';
 	// IMPORTED UTILS
 	import { mode, toggleTheme } from '$stores/themeStates';
 	import { user, isSignedIn, getAvatar } from '$stores/authStates';
 	// IMPORTED COMPONENTS
-	import Menu from '$components/Menu';
+	import Menu from '$modules/Menu';
 
 	// REFS
 	let parentEl: HTMLDivElement;
@@ -122,7 +122,8 @@
 				}
 				img {
 					@include box(40px);
-					transition: 0.2s;
+					background-color: var(--bg-color-2);
+					border-radius: 50%;
 				}
 			}
 			.content {
