@@ -1,5 +1,5 @@
 <script lang="ts">
-	// ASSETS
+	// IMPORTED ASSETS
 	import IconImage from '$assets/icon.png';
 	import NavigationItem from './NavigationItem.svelte';
 	import AccountItem from './AccountItem.svelte';

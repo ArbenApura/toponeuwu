@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@popperjs/core": "^2.11.6",
 		"@svelte-plugins/tooltips": "^0.1.6"
 	}
 }

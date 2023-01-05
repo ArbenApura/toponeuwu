@@ -5,9 +5,10 @@ import { get } from 'svelte/store';
 // FUNCTIONS
 import { palette } from '$utils/palette';
 // STATES
-import { themeStates } from './states';
+import { mode, themeStates } from './states';
 
 // UTILS
+export const toggleTheme = () => mode.update((value) => (value == 'light' ? 'dark' : 'light'));
 export const setStyleProperty = (key: string, value: string) => {
 	try {
 		document.documentElement.style.setProperty(key, value);

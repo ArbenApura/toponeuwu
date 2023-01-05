@@ -1,12 +1,12 @@
 <script lang="ts">
-	// COMPONENTS
+	// IMPORTED COMPONENTS
 	import SideBar from '$components/SideBar';
-	// LIB-FUNCTIONS
+	// IMPORTED LIB-FUNCTIONS
 	import { onMount } from 'svelte';
-	// FUNCTIONS
+	// IMPORTED FUNCTIONS
 	import { initializeThemeStates } from '$stores/themeStates';
 	import { initializeMediaStates, updateMedia } from '$stores/mediaStates/utils';
-	// STYLES
+	// IMPORTED STYLES
 	import '$styles/index.scss';
 
 	// LIFECYCLES

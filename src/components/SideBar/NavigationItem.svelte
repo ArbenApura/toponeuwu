@@ -1,15 +1,18 @@
 <script lang="ts">
-	// LIB-FUNCTIONS
+	// IMPORTED LIB-FUNCTIONS
 	import { tooltip } from '@svelte-plugins/tooltips';
 	import { page } from '$app/stores';
-	// FUNCTIONS
+	// IMPORTED FUNCTIONS
 	import { isMD } from '$stores/mediaStates';
 
 	// PROPS
 	export let label: string, icon: string, href: string;
 </script>
 
-<div class="wrapper" data-is-active={$page.route.id == href}>
+<div
+	class="wrapper"
+	data-is-active={href == '/' ? $page.route.id == href : $page.route.id?.includes(href)}
+>
 	<div class="container">
 		{#if $isMD}
 			<div class="icon" use:tooltip={{ content: label, position: 'right' }}>
@@ -52,7 +55,7 @@
 					@include box(60px);
 				}
 				i {
-					transition: 0.2s;
+					transition: transform 0.2s;
 				}
 			}
 			p {

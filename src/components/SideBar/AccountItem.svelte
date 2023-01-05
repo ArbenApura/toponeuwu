@@ -1,26 +1,38 @@
 <script lang="ts">
-	// LIB-FUNCTIONS
+	// IMPORTED LIB-FUNCTIONS
 	import { page } from '$app/stores';
-	// ASSETS
+	// IMPORTED ASSETS
 	import ProfileOneImage from '$assets/avatars/1.png';
+	// IMPORTED COMPONENTS
+	import AccountMenu from './AccountMenu.svelte';
+
+	// REFS
+	let parentEl: HTMLDivElement;
+
+	// STATES
+	let isMenuOpen = false;
+
+	// UTILS
+	const toggleMenu = () => (isMenuOpen = !isMenuOpen);
 </script>
 
-<a href="/account">
-	<div class="wrapper" data-is-active={$page.route.id == '/account'}>
-		<div class="container">
-			<div class="avatar">
-				<img src={ProfileOneImage} alt="Account Avatar" />
+<AccountMenu {parentEl} {toggleMenu} isOpen={isMenuOpen} />
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="wrapper" data-is-active={$page.route.id?.includes('/account')} on:click={toggleMenu}>
+	<div class="container">
+		<div class="avatar" bind:this={parentEl}>
+			<img src={ProfileOneImage} alt="Account Avatar" />
+		</div>
+		<div class="content">
+			<div class="info">
+				<h6 class="text-name">Arben Apura</h6>
+				<p class="text-username">@apura_arben</p>
 			</div>
-			<div class="content">
-				<div class="info">
-					<h6 class="text-name">Arben Apura</h6>
-					<p class="text-username">@apura_arben</p>
-				</div>
-				<i class="ti ti-dots" />
-			</div>
+			<i class="ti ti-dots" />
 		</div>
 	</div>
-</a>
+</div>
 
 <style lang="scss">
 	@import '$styles';
