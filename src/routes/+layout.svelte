@@ -13,6 +13,9 @@
 	onMount(() => {
 		initializeThemeStates();
 		initializeMediaStates();
+		// REMOVE LOADING STATE
+		const loadingEl = document.querySelector('.loading');
+		if (loadingEl) document.body.removeChild(loadingEl);
 	});
 </script>
 
