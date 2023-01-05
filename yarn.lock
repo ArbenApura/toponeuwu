@@ -488,6 +488,11 @@ cookie@^0.5.0:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
+cookiejs@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/cookiejs/-/cookiejs-2.1.2.tgz#51af70368e22064321b3b91159517d5bf6bef189"
+  integrity sha512-FXsQ2Ub/bTjlt2aXiJsiT33g6iEXdYTIKabJa9Jn5CZjOyzszJjOGKWyqs+silY+xYmA9eiif2vGAxv2pJndcg==
+
 cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"

@@ -1,14 +1,20 @@
-// TYPES
+// IMPORTED TYPES
 import type { ThemeMode } from './types';
-// LIB-FUNCTIONS
+// IMPORTED LIB-FUNCTIONS
 import { get } from 'svelte/store';
-// FUNCTIONS
+import cookie from 'cookiejs';
+// IMPORTED FUNCTIONS
 import { palette } from '$utils/palette';
-// STATES
-import { mode, themeStates } from './states';
+// IMPORTED STATES
+import { isInitialized, mode, themeStates } from './states';
 
 // UTILS
 export const toggleTheme = () => mode.update((value) => (value == 'light' ? 'dark' : 'light'));
+export const loadStoredData = () => {
+	const mode = cookie.get('theme.mode') as ThemeMode;
+	if (!mode) return;
+	themeStates.mode.set(mode);
+};
 export const setStyleProperty = (key: string, value: string) => {
 	try {
 		document.documentElement.style.setProperty(key, value);
@@ -35,11 +41,11 @@ export const updateStyleRoot = () => {
 			palette.light.map((value, index) => {
 				setStyleProperty(`--bg-color-${index + 1}`, value);
 			});
-			// setStyleProperty('--text-color', palette.dark[1]);
-			// setStyleProperty('--bg-color', palette.light[0]);
 			setStyleProperty('--border-color', palette.light[3]);
 	}
 };
 export const initializeThemeStates = () => {
+	loadStoredData();
 	updateStyleRoot();
+	isInitialized.set(true);
 };

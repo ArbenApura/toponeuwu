@@ -1,8 +1,6 @@
-// LIB-FUNCTIONS
-import { get } from 'svelte/store';
-// FUNCTIONS
+// IMPORTED FUNCTIONS
 import { breakpoints } from '$utils/breakpoints';
-// STATES
+// IMPORTED STATES
 import { mediaStates } from './states';
 
 // UTILS
