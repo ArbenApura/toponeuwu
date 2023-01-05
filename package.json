@@ -32,7 +32,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/poppins": "^4.5.10",
 		"@svelte-plugins/tooltips": "^0.1.6"
 	}
 }

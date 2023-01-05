@@ -45,9 +45,6 @@
 
 <style lang="scss">
 	@import '$styles';
-	:global(.tooltip) {
-		--tooltip-background-color: var(--bg-color-3);
-	}
 	.wrapper {
 		@include sm-up-screen {
 			@include border-right;

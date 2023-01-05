@@ -1,13 +1,17 @@
-// FONTS
-@import '@fontsource/poppins';
 // IMPORTS
 @import './utils';
 @import './lib';
 
+html {
+	font-size: 16px;
+}
+body {
+	background-color: var(--bg-color-1);
+}
 * {
 	color: var(--text-color-1);
 	background-color: transparent;
-	font-family: 'Poppins', Verdana;
+	font-family: 'Poppins', sans-serif;
 	padding: 0;
 	margin: 0;
 	outline: none;
@@ -15,7 +19,4 @@
 	user-select: none;
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
-}
-body {
-	background-color: var(--bg-color-1);
 }
