@@ -23,7 +23,7 @@
 				<div class="icon">
 					<img src={IconImage} alt="Top One Uwu Icon" />
 				</div>
-				<h3>Top One Uwu</h3>
+				<h3>Top <span>One</span> Uwu</h3>
 			</div>
 		</a>
 		<div class="body">
@@ -63,6 +63,7 @@
 		}
 		width: 100%;
 		background-color: var(--bg-color-1);
+		position: fixed;
 		.container {
 			@include md-down-screen {
 				flex-direction: row;
@@ -89,6 +90,9 @@
 					@include pr(4);
 					@include md-only-screen {
 						display: none;
+					}
+					span {
+						color: $primary-color;
 					}
 				}
 			}

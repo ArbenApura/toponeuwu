@@ -29,33 +29,45 @@
 
 <svelte:window on:resize={updateMedia} />
 
-<div class="wrapper">
+<div class="screen">
 	<div class="container">
 		<SideBar />
-		<div class="page">
-			<slot />
+		<div class="outer-page">
+			<div class="inner-page">
+				<slot />
+			</div>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
 	@import '$styles';
-	.wrapper {
+	.screen {
 		@include flex-center-start;
-		@include box(100%);
+		@include md-down-screen {
+			height: calc(100% - 60px);
+		}
+		width: 100%;
 		background-color: var(--bg-color-2);
 		position: fixed;
+		overflow: auto;
 		.container {
 			width: 100%;
 			max-width: 1536px;
 			display: flex;
-			.page {
-				@include md-down-screen {
-					height: calc(100vh - 60px);
+			.outer-page {
+				@include md-only-screen {
+					padding-left: 60px;
 				}
-				width: 100%;
-				height: 100vh;
-				overflow: auto;
+				@include md-up-screen {
+					padding-left: 250px;
+				}
+				.inner-page {
+					@include md-down-screen {
+						min-height: calc(100vh - 60px);
+					}
+					min-height: 100vh;
+				}
 			}
 		}
 	}
