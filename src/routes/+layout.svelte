@@ -32,10 +32,8 @@
 <div class="screen">
 	<div class="container">
 		<SideBar />
-		<div class="outer-page">
-			<div class="inner-page">
-				<slot />
-			</div>
+		<div class="page">
+			<slot />
 		</div>
 	</div>
 </div>
@@ -48,25 +46,18 @@
 			height: calc(100% - 60px);
 		}
 		width: 100%;
-		background-color: var(--bg-color-2);
 		position: fixed;
 		overflow: auto;
 		.container {
 			width: 100%;
 			max-width: 1536px;
 			display: flex;
-			.outer-page {
+			.page {
 				@include md-only-screen {
 					padding-left: 60px;
 				}
 				@include md-up-screen {
 					padding-left: 250px;
-				}
-				.inner-page {
-					@include md-down-screen {
-						min-height: calc(100vh - 60px);
-					}
-					min-height: 100vh;
 				}
 			}
 		}
