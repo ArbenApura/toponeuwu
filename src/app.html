@@ -61,12 +61,15 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				z-index: 10000;
+			}
+			.loading img {
+				border-radius: 50%;
+				background-color: #ff8066;
 			}
 			.loading .animated-img {
 				width: 150px;
 				height: 150px;
-				border-radius: 50%;
-				background-color: #ff8066;
 				box-shadow: 0 0 0 0 rgba(255, 128, 102, 1);
 				animation: pulse 2s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
 			}
@@ -79,21 +82,22 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				margin-bottom: 8px;
 			}
 			.loading .brand div img {
 				width: 25px;
+				height: 25px;
 				margin-right: 8px;
 			}
-			.loading .brand div h4 {
+			.loading .brand div b {
 				color: #f8fafc;
+				font-size: 1.1rem;
 			}
-			.loading .brand div h4 span {
+			.loading .brand div b span {
 				color: #ff8066;
 			}
-			.loading .brand p {
+			.loading .brand small {
 				color: #6b7280;
-				font-size: 10px;
+				font-size: .6rem;
 			}
 			@keyframes pulse {
 				0% {
@@ -119,9 +123,9 @@
 			<div class="brand">
 				<div>
 					<img src="%sveltekit.assets%/favicon.png" alt="Top One Uwu Icon" />
-					<h4>Top <span>One</span> Uwu</h4>
+					<b>Top <span>One</span> Uwu</b>
 				</div>
-				<p>Developed by Arben Apura</p>
+				<small>Developed by Arben Apura</sm>
 			</div>
 		</div>
 	</body>

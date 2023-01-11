@@ -22,7 +22,7 @@
 		// OBSERVE THEME
 		document.body.setAttribute(
 			'class',
-			$isDark ? 'bg-gray-800 text-slate-100' : 'bg-gray-200 text-dark-900'
+			$isDark ? 'bg-gray-800 text-slate-100' : 'bg-slate-200 text-dark-900'
 		);
 	} catch {}
 
