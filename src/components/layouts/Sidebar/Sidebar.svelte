@@ -15,7 +15,7 @@
 	];
 </script>
 
-<div class="sidenav bg-slate-100 dark:bg-gray-900">
+<div class="sidebar bg-slate-100 dark:bg-gray-900">
 	<div class="header">
 		<div class="icon">
 			<img src={IconPNG} alt="Icon" />
@@ -41,10 +41,10 @@
 
 <style lang="scss">
 	@import '$styles';
-	.sidenav {
+	.sidebar {
 		@apply fixed left-0 z-10 w-full h-full shadow-sm flex flex-col;
 		@include screen-down('sm') {
-			@apply bottom-0 max-h-[76px] flex-row;
+			@apply bottom-0 max-h-[76px] min-w-[260px] flex-row;
 		}
 		@include screen-only('md') {
 			@apply max-w-[76px];
@@ -90,7 +90,7 @@
 			.list {
 				@apply rounded-sm flex flex-col overflow-hidden;
 				@include screen-down('sm') {
-					@apply flex-row;
+					@apply flex-row rounded-r-none;
 				}
 				hr {
 					@apply border-none w-full h-[1px];

@@ -12,7 +12,6 @@ export const isSMDown = writable<boolean>(false);
 export const isMDDown = writable<boolean>(false);
 export const isLGDown = writable<boolean>(false);
 export const isXLDown = writable<boolean>(false);
-export const is2XLDown = writable<boolean>(false);
 export const isXSUp = writable<boolean>(false);
 export const isSMUp = writable<boolean>(false);
 export const isMDUp = writable<boolean>(false);
@@ -29,7 +28,6 @@ export const mediaStates = {
 	isMDDown,
 	isLGDown,
 	isXLDown,
-	is2XLDown,
 	isXSUp,
 	isSMUp,
 	isMDUp,

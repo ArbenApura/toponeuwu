@@ -10,7 +10,7 @@
 	// IMPORTED STYLES
 	import '$styles/tailwind.scss';
 	// IMPORTED COMPONENTS
-	import Sidenav from '$layouts/Sidenav';
+	import Sidebar from '$layouts/Sidebar';
 
 	// REACTIVE STATEMENTS
 	$: {
@@ -38,7 +38,7 @@
 <svelte:window on:resize={updateMedia} />
 
 <main class={`${$isDark && 'dark'}`}>
-	<Sidenav />
+	<Sidebar />
 	<div class="screen">
 		<div class="page">
 			<slot />
@@ -49,7 +49,7 @@
 <style lang="scss">
 	@import '$styles';
 	.screen {
-		@apply w-full h-full fixed overflow-auto;
+		@apply w-full h-full fixed overflow-y-auto min-w-[260px];
 		@include screen-down('sm') {
 			height: calc(100% - 76px);
 		}

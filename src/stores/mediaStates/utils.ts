@@ -15,11 +15,10 @@ export const updateMedia = () => {
 		mediaStates.isXL.set(winWidth >= breakpoints.xl && winWidth < breakpoints['2xl']);
 		mediaStates.is2XL.set(winWidth >= breakpoints['2xl']);
 
-		mediaStates.isSMDown.set(winWidth < breakpoints.sm);
-		mediaStates.isMDDown.set(winWidth < breakpoints.md);
-		mediaStates.isLGDown.set(winWidth < breakpoints.lg);
-		mediaStates.isXLDown.set(winWidth < breakpoints.xl);
-		mediaStates.is2XLDown.set(winWidth < breakpoints['2xl']);
+		mediaStates.isSMDown.set(winWidth < breakpoints.md);
+		mediaStates.isMDDown.set(winWidth < breakpoints.lg);
+		mediaStates.isLGDown.set(winWidth < breakpoints.xl);
+		mediaStates.isXLDown.set(winWidth < breakpoints['2xl']);
 
 		mediaStates.isXSUp.set(winWidth > breakpoints.sm);
 		mediaStates.isSMUp.set(winWidth > breakpoints.md);

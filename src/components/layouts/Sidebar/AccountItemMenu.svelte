@@ -1,5 +1,6 @@
 <script lang="ts">
 	// IMPORTED LIB-UTILS
+	import { onDestroy } from 'svelte';
 	import { createPopper } from '@popperjs/core';
 	// IMPORTED UTILS
 	import { isDark, toggleTheme } from '$stores/themeStates';
@@ -56,12 +57,19 @@
 			href: '/account/sign-up'
 		}
 	];
+	let popperInstance: ReturnType<typeof createPopper>;
 
 	// REACTIVE STATEMENTS
 	$: (() => {
 		if (!parentEl || !childEl) return;
-		createPopper(parentEl, childEl, { placement: 'top-start' });
+		if (popperInstance) popperInstance.destroy();
+		popperInstance = createPopper(parentEl, childEl, { placement: 'top-start' });
 	})();
+
+	// LIFECYCLES
+	onDestroy(() => {
+		if (popperInstance) popperInstance.destroy();
+	});
 </script>
 
 {#if isOpen}

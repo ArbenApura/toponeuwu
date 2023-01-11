@@ -42,6 +42,9 @@
 	.item {
 		@apply rounded-sm overflow-hidden flex-grow;
 		@include flex-start-center;
+		@include screen-down('sm') {
+			@apply rounded-l-none;
+		}
 		&[data-is-active='true'] {
 			@apply bg-primary text-slate-100;
 		}
@@ -54,6 +57,7 @@
 			@include screen-up('md') {
 				@include box(60px);
 			}
+			min-width: calc(260px / 6);
 			img {
 				@apply rounded-full;
 				@include box(35px);
