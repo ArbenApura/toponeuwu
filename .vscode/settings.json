@@ -1,5 +1,7 @@
 {
 	"editor.tabSize": 4,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"restoreTerminals.terminals": [
 		{
 			"splitTerminals": [

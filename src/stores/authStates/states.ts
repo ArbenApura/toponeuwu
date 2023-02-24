@@ -11,9 +11,9 @@ export const DEFAULT_USER: User = {
 	name: '',
 	username: '',
 	avatar: 0,
-	accountType: 'normal',
-	lastOnline: 0,
-	createdAt: 0
+	account_type: 'normal',
+	last_online: 0,
+	created_at: 0
 };
 
 // STATES
@@ -28,6 +28,6 @@ user.subscribe((user) => {
 		const isInitialized = get(stores.isInitialized);
 		if (!isInitialized) return;
 		if (user.uid !== '') isSignedIn.set(true);
-		if (user.accountType === 'admin') isAdmin.set(true);
+		if (user.account_type === 'admin') isAdmin.set(true);
 	} catch {}
 });

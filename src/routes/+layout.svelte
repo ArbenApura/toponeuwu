@@ -8,7 +8,7 @@
 	import { updateMedia } from '$stores/mediaStates';
 	import { initializeStores } from '$stores/index';
 	// IMPORTED STYLES
-	import '$styles/tailwind.scss';
+	import '$styles/libs/index.scss';
 	// IMPORTED COMPONENTS
 	import Sidebar from '$layouts/Sidebar';
 
